@@ -264,6 +264,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
               const SizedBox(height: 16),
               buildProgress(),
               const SizedBox(height: 16.0),
+              Text("Please Upload File Before Saving Recipe"),
               ElevatedButton(
                 onPressed: _savingRecipe ? null : () {
                   if (_formKey.currentState!.validate()) {
