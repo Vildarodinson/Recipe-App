@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:recipe_app/pages/signin.dart';
 import 'package:recipe_app/widgets/color.dart';
+import 'package:recipe_app/widgets/dimensions.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -78,16 +79,16 @@ class _LoginPageState extends State<LoginPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(Dimensions.height16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 Icons.login,
-                size: 150,
+                size: Dimensions.height150,
                 color: Colors.yellow,
               ),
-              SizedBox(height: 32.0),
+              SizedBox(height: Dimensions.height32),
               TextFormField(
                 controller: _emailController,
                 decoration: InputDecoration(
@@ -110,16 +111,16 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 32.0),
+              SizedBox(height: Dimensions.height32),
               ElevatedButton(
                 onPressed: _isLoading ? null : _login,
                 style: ElevatedButton.styleFrom(
                   primary: Colors.yellow,
                   onPrimary: Colors.black,
                   textStyle: TextStyle(color: Colors.black),
-                  padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 12.0),
+                  padding: EdgeInsets.symmetric(horizontal: Dimensions.width40, vertical: Dimensions.height12),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.circular(Dimensions.radius24),
                   ),
                   side: BorderSide(color: Colors.black),
                 ),
@@ -129,14 +130,14 @@ class _LoginPageState extends State<LoginPage> {
                 )
                     : Text('Log In'),
               ),
-              SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               OutlinedButton(
                 onPressed: _navigateToSignUp,
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.yellow),
-                  padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 12.0),
+                  padding: EdgeInsets.symmetric(horizontal: Dimensions.width40, vertical: Dimensions.height12),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24.0),
+                    borderRadius: BorderRadius.circular(Dimensions.radius24),
                   ),
                 ),
                 child: Text(

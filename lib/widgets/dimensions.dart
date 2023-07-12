@@ -7,20 +7,26 @@ class Dimensions{
   static double pageViewCon = screenHeight/3.94;
   static double pageViewTextCon = screenHeight/6.19;
 
+  static double height400 = screenHeight/2.17;
   static double height320 = screenHeight/2.71;
   static double height300 = screenHeight/2.89;
   static double height275 = screenHeight/3.15;
+  static double height150 = screenHeight/5.78;
   static double height3 = screenHeight/289.13;
   static double height15 = screenHeight/57.83;
+  static double height12 = screenHeight/72.28;
   static double height13 = screenHeight/66.72;
   static double height10 = screenHeight/86.74;
+  static double height16 = screenHeight/54.21;
   static double height20 = screenHeight/43.37;
   static double height35 = screenHeight/24.78;
   static double height25 = screenHeight/34.70;
   static double height30 = screenHeight/29.21;
+  static double height32 = screenHeight/27.11;
   static double height40 = screenHeight/21.69;
   static double height45 = screenHeight/19.28;
   static double height50 = screenHeight/17.35;
+  static double height80 = screenHeight/10.84;
 
 
 
@@ -30,6 +36,7 @@ class Dimensions{
   static double font22 = screenHeight/39.43;
 
   static double radius30 = screenHeight/28.91;
+  static double radius24 = screenHeight/36.14;
   static double radius15 = screenHeight/57.83;
   static double radius5 = screenHeight/173.48;
   static double radius8 = screenHeight/108.43;

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:recipe_app/pages/navbar.dart';
 import 'package:recipe_app/widgets/app_routes.dart';
+import 'package:recipe_app/widgets/dimensions.dart';
 
 class ProfilePage extends StatelessWidget {
   final String name;
@@ -18,33 +19,33 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.yellow,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(Dimensions.iconSize16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
-              radius: 50,
+              radius: Dimensions.height50,
               backgroundColor: Colors.yellow,
               child: Icon(
                 Icons.account_circle,
-                size: 80,
+                size: Dimensions.height80,
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: Dimensions.iconSize16),
             Text(
               'Name: $name',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: Dimensions.font20, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 8.0),
+            SizedBox(height: Dimensions.radius8),
             Text(
               'Email: $email',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: Dimensions.iconSize16),
             ),
-            SizedBox(height: 8.0),
+            SizedBox(height: Dimensions.radius8),
             Text(
               'Bio: $bio',
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: Dimensions.iconSize16),
             ),
           ],
         ),

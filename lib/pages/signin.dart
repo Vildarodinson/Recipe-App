@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:recipe_app/widgets/dimensions.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -71,16 +72,16 @@ class _SignUpPageState extends State<SignUpPage> {
         backgroundColor: Colors.yellow,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(Dimensions.height16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               Icons.person_add,
-              size: 150,
+              size: Dimensions.height150,
               color: Colors.yellow,
             ),
-            SizedBox(height: 32.0),
+            SizedBox(height: Dimensions.height32),
             TextFormField(
               controller: _emailController,
               decoration: InputDecoration(
@@ -91,7 +92,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            SizedBox(height: Dimensions.height16),
             TextFormField(
               controller: _passwordController,
               decoration: InputDecoration(
@@ -103,11 +104,11 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               obscureText: true,
             ),
-            SizedBox(height: 32.0),
+            SizedBox(height: Dimensions.height32),
             Container(
               decoration: BoxDecoration(
                 color: Colors.yellow[100]!,
-                borderRadius: BorderRadius.circular(8.0),
+                borderRadius: BorderRadius.circular(Dimensions.radius8),
               ),
               child: ElevatedButton(
                 onPressed: _isLoading ? null : _signUp,

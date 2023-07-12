@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:recipe_app/pages/navbar.dart';
 import 'package:recipe_app/widgets/color.dart';
 import 'package:path/path.dart' as path;
+import 'package:recipe_app/widgets/dimensions.dart';
 
 
 
@@ -85,7 +86,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
         iconTheme: IconThemeData(color: Colors.black),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(Dimensions.height16),
         child: Form(
           key: _formKey,
           child: Column(
@@ -102,7 +103,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   _name = value;
                 },
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               TextFormField(
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
                 decoration: const InputDecoration(labelText: 'Time'),
@@ -116,7 +117,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   _time = double.tryParse(value ?? '') ?? 0;
                 },
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               DropdownButtonFormField<String>(
                 decoration: const InputDecoration(labelText: 'Time Type'),
                 value: _timetype,
@@ -136,7 +137,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   return null;
                 },
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(labelText: 'Serving'),
@@ -150,7 +151,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   _serving = int.tryParse(value ?? '') ?? 0;
                 },
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               DropdownButtonFormField<String>(
                 decoration: const InputDecoration(labelText: 'Difficulty'),
                 value: _difficulty,
@@ -171,7 +172,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   return null;
                 },
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               TextFormField(
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(labelText: 'Calories'),
@@ -185,12 +186,12 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   _calories = int.tryParse(value ?? '') ?? 0;
                 },
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               Text(
                 'Ingredients',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: Dimensions.iconSize18, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 8.0),
+              SizedBox(height: Dimensions.iconSize18),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: _ingredients.length,
@@ -204,12 +205,12 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 ),
                 child: Text('Add Ingredient'),
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               Text(
                 'Directions',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: Dimensions.iconSize18, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 8.0),
+              SizedBox(height: Dimensions.height16),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: _directions.length,
@@ -223,7 +224,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 ),
                 child: const Text('Add Direction'),
               ),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.yellow),
@@ -231,15 +232,15 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   ),
                   onPressed: selectFile,
                   child: const Text('Select File')),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               if (pickedFile != null)
                 Container(
-                  height: 300, // Adjust the height as needed
+                  height: Dimensions.height300, // Adjust the height as needed
                   child: Center(
                     child: pickedFile!.path != null
                         ? Image.file(
                       File(pickedFile!.path!),
-                      width: 400,
+                      width: Dimensions.height400,
                       fit: BoxFit.cover,
                     )
                         : const SizedBox(),
@@ -261,9 +262,9 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 },
                 child: const Text('Upload File'),
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: Dimensions.height16),
               buildProgress(),
-              const SizedBox(height: 16.0),
+              SizedBox(height: Dimensions.height16),
               Text("Please Upload File Before Saving Recipe"),
               ElevatedButton(
                 onPressed: _savingRecipe ? null : () {
@@ -294,7 +295,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
           double progress = data.bytesTransferred / data.totalBytes;
 
           return SizedBox(
-            height: 50,
+            height: Dimensions.height50,
             child: Stack(
               fit: StackFit.expand,
               children: [
@@ -314,7 +315,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
           );
         }
         else{
-          return const SizedBox(height: 30);
+          return SizedBox(height: Dimensions.height30);
         }
       });
 
